@@ -1,18 +1,44 @@
 import type { Config } from "tailwindcss";
+import typography from "./src/styles/plugin/typo";
 
 export default {
-  content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+  darkMode: "class",
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+    screens: { mobile: "768px", tablet: "1024px" },
+    colors: {
+      transparent: "transparent",
+      currentColor: "currentColor",
+      white: "#fff",
+      black: "#121212",
+      surface: "var(--surface)",
+      ring: "var(--ring)",
+      background: "var(--background)",
+      foreground: {
+        DEFAULT: "var(--foreground)",
+        accent: "var(--foreground-accent)",
+        muted: "var(--foreground-muted)"
       },
-    },
+      primary: {
+        DEFAULT: "var(--primary)",
+        accent: "var(--primary-accent)",
+        surface: "var(--primary-surface)",
+        foreground: "var(--primary-foreground)"
+      },
+      secondary: {
+        DEFAULT: "var(--secondary)",
+        accent: "var(--secondary-accent)",
+        foreground: "var(--secondary-foreground)"
+      },
+      border: {
+        DEFAULT: "var(--border)",
+        accent: "var(--border-accent)"
+      },
+      card: {
+        DEFAULT: "var(--card)",
+        foreground: "var(--card-foreground)"
+      }
+    }
   },
-  plugins: [],
+  plugins: [typography]
 } satisfies Config;
