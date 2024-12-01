@@ -26,6 +26,7 @@ module.exports = {
     "react/jsx-props-no-spreading": "off",
     "import/prefer-default-export": "off",
     "no-unused-vars": "off",
+    "react/require-default-props": "off",
     "@typescript-eslint/no-unused-vars": [
       "warn",
       {
